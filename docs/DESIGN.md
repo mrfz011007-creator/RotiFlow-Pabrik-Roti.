@@ -95,7 +95,7 @@ Arah visual yang dipilih sebelumnya adalah **terang dan profesional**:
 - Perubahan pada pesanan lama tidak boleh mengubah tanggal pesanan secara diam-diam.
 - Penghapusan pesanan memerlukan konfirmasi.
 - Pedagang yang sama boleh memiliki beberapa catatan pesanan terpisah pada tanggal yang sama; rekap menjumlahkan semua catatan tersebut.
-- Mekanisme cadangan/pemulihan data belum diputuskan.
+- Fitur cadangan/pemulihan data ditunda ke versi berikutnya; bukan bagian dari prototipe awal.
 
 ## 7. Di luar ruang lingkup versi awal
 
@@ -123,9 +123,9 @@ Fitur berikut **belum disepakati** dan tidak boleh ditambahkan sebagai asumsi:
 
 ## 9. Hal yang masih perlu dikonfirmasi
 
-Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya kepada pengguna.
-
-
+Keputusan untuk prototipe awal:
+- Fitur cadangan/pemulihan data ditunda ke versi berikutnya agar versi pertama berfokus pada fungsi pesanan harian dan dapat diuji lebih cepat.
+- Jangan menambahkan backup/restore ke prototipe awal tanpa persetujuan baru dari pengguna.
 
 ## 10. Tanggal pesanan
 
@@ -146,8 +146,8 @@ Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya
 
 ## 13. Checkpoint pengerjaan
 
-**Checkpoint saat ini: desain dan alur bisnis sedang dikunci. Belum mulai implementasi Android.**
+**Checkpoint saat ini: keputusan ruang lingkup prototipe awal sudah dikonfirmasi. Belum mulai implementasi Android.**
 
 Keputusan yang sudah disepakati harus dipertahankan saat memperbarui `docs/WIREFRAME.md`, roadmap, dan implementasi berikutnya. Jika ada konflik dengan dokumen lama yang menyebut pencatatan produksi/distribusi aktual, dokumen desain ini menjadi acuan terbaru untuk ruang lingkup awal.
 
-Langkah berikutnya: lanjutkan pertanyaan yang belum diputuskan satu per satu, lalu sinkronkan wireframe dan roadmap sebelum mulai menulis kode aplikasi.
+Langkah berikutnya: lakukan pemeriksaan akhir konsistensi dokumen, lalu mulai fondasi Android dan GitHub Actions.
