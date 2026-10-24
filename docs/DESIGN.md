@@ -83,8 +83,11 @@ Arah visual yang dipilih sebelumnya adalah **terang dan profesional**:
 - Aksen warna seperlunya, tanpa dekorasi berlebihan.
 - Tombol dan kolom input mudah digunakan pada layar HP.
 
-## 6. Edit dan riwayat
+## 6. Riwayat, edit, dan hapus
 
+- Aplikasi menyediakan riwayat pesanan per tanggal.
+- Pengguna dapat memilih tanggal tertentu untuk melihat semua pesanan yang tercatat pada tanggal itu; tanggal hari ini menjadi default.
+- Jika tanggal tidak memiliki pesanan, tampilkan keadaan kosong yang jelas dan sediakan tindakan untuk menambah pesanan pada tanggal itu.
 - Pesanan yang telah disimpan dapat diedit kapan saja, termasuk tanggal sebelumnya.
 - Pesanan yang salah juga dapat dihapus.
 - Setelah pesanan diedit atau dihapus, total pedagang dan total per jenis roti untuk tanggal terkait harus diperbarui.
