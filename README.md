@@ -12,6 +12,7 @@ RotiFlow adalah prototipe aplikasi Android untuk mendemonstrasikan pencatatan pr
 
 ## Dokumen
 - [Desain aplikasi](docs/DESIGN.md)
+- [Wireframe awal untuk didiskusikan](docs/WIREFRAME.md)
 - [Roadmap implementasi](docs/ROADMAP.md)
 
 ## Batasan awal
