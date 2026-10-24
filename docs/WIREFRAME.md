@@ -1,123 +1,123 @@
-# RotiFlow — Wireframe Awal
+# RotiFlow — Wireframe Prototipe Pesanan Harian
 
-**Status:** Draft v0.1 — perlu dibahas bersama sebelum implementasi UI.  
-**Tujuan:** Menyamakan susunan layar dan alur kerja terlebih dahulu. Ini wireframe teks, belum desain final.
+**Versi:** 0.2  
+**Status:** Draft berdasarkan keputusan desain pengguna  
+**Acuan utama:** [DESIGN.md](DESIGN.md)  
+**Catatan:** Wireframe teks ini menjelaskan susunan layar, bukan tangkapan layar atau UI yang sudah diimplementasikan.
 
-## Prinsip desain
+## 1. Navigasi utama
 
-- Utamakan layar Android portrait dan penggunaan satu tangan.
-- Label bahasa Indonesia, ukuran tombol nyaman disentuh, angka mudah dibaca.
-- Jangan menampilkan selisih sebagai stok fisik.
-- Data contoh harus diberi label **DEMO**.
-- Hindari grafik/animasi berat; ringkasan angka harus cepat dipahami.
+- **Pesanan** — daftar pesanan untuk tanggal terpilih dan total semua roti.
+- **Tambah pesanan** — input pesanan seorang pedagang.
+- Tidak perlu halaman produksi aktual, distribusi aktual, keuangan, atau stok untuk versi awal.
 
-## 1. Ringkasan
-
-```text
-┌────────────────────────────────┐
-│ RotiFlow                 DEMO  │
-│ Ringkasan                      │
-│ Sabtu, 24 Oktober 2026     [⌄] │
-├────────────────────────────────┤
-│ PRODUKSI HARI INI               │
-│ 1.250 buah                      │
-├────────────────────────────────┤
-│ DISTRIBUSI HARI INI             │
-│ 1.080 buah                      │
-├────────────────────────────────┤
-│ SELISIH CATATAN                 │
-│   170 buah                      │
-│ Produksi dikurangi distribusi   │
-│ Bukan angka stok fisik          │
-├────────────────────────────────┤
-│ [ + Catat Produksi ]            │
-│ [ + Catat Distribusi ]          │
-├────────────────────────────────┤
-│ Aktivitas Terbaru      Lihat >  │
-│ Produksi · Roti Cokelat         │
-│ 300 buah · 08.30                │
-│ Distribusi · Pedagang Demo A    │
-│ 120 buah · 09.00                │
-├────────────────────────────────┤
-│ Ringkasan | Produksi | Distribusi│
-└────────────────────────────────┘
-```
-
-Angka di atas hanya contoh tampilan, bukan data pabrik. Filter tanggal mengubah semua ringkasan sesuai tanggal yang dipilih.
-
-## 2. Catat Produksi
+## 2. Layar Pesanan Harian
 
 ```text
-┌────────────────────────────────┐
-│ ← Kembali     Catat Produksi    │
-├────────────────────────────────┤
-│ Tanggal produksi                │
-│ [ 24/10/2026                 ]  │
-│ Jenis/nama roti                 │
-│ [ Roti Cokelat               ]  │
-│ Jumlah diproduksi (buah)        │
-│ [ 300                        ]  │
-│ Catatan (opsional)              │
-│ [ Shift pagi                 ]  │
-│                                │
-│ [       SIMPAN PRODUKSI      ]  │
-├────────────────────────────────┤
-│ Riwayat Produksi      Lihat >   │
-│ Roti Cokelat · 300 buah         │
-│ Roti Tawar · 450 buah           │
-└────────────────────────────────┘
+┌──────────────────────────────────┐
+│ RotiFlow                         │
+│ Pesanan Harian                   │
+├──────────────────────────────────┤
+│ Tanggal                          │
+│ [ 24 Okt 2026              ▼ ]   │  ← default hari ini; dapat diubah
+│                                  │
+│ [ + Tambah Pesanan Pedagang ]    │
+├──────────────────────────────────┤
+│ PESANAN PEDAGANG                 │
+│                                  │
+│ Nama Pedagang A          120 roti│
+│ [Buka rincian]                   │
+│ ──────────────────────────────── │
+│ Nama Pedagang B           85 roti│
+│ [Buka rincian]                   │
+│ ──────────────────────────────── │
+│ Nama Pedagang C           60 roti│
+│ [Buka rincian]                   │
+├──────────────────────────────────┤
+│ TOTAL PER JENIS ROTI             │
+│ Srikaya                  25      │
+│ Kelapa                   20      │
+│ Paha ayam                15      │
+│ ... lanjutkan 15 jenis ...       │
+└──────────────────────────────────┘
 ```
 
-## 3. Catat Distribusi
+**Perilaku:**
+- Tanggal awal adalah tanggal hari ini.
+- Pengguna dapat memilih tanggal lain untuk melihat, menambah, atau mengedit pesanan.
+- Daftar berisi hanya pedagang yang memiliki pesanan pada tanggal terpilih.
+- Setiap baris memperlihatkan nama pedagang dan jumlah total rotinya.
+- Baris/rincian dapat dibuka untuk melihat semua 15 jenis roti.
+- Total per jenis roti ditampilkan di bawah daftar pedagang; tidak ada halaman rekap terpisah pada tahap awal.
+- Angka di wireframe hanyalah contoh ilustrasi, bukan data pabrik.
+
+## 3. Layar Tambah/Edit Pesanan Pedagang
 
 ```text
-┌────────────────────────────────┐
-│ ← Kembali    Catat Distribusi   │
-├────────────────────────────────┤
-│ Tanggal pengiriman              │
-│ [ 24/10/2026                 ]  │
-│ Nama pedagang                   │
-│ [ Pedagang Demo A            ]  │
-│ Jenis/nama roti                 │
-│ [ Roti Cokelat               ]  │
-│ Jumlah dikirim (buah)           │
-│ [ 120                        ]  │
-│ Catatan (opsional)              │
-│ [ Rute pagi                  ]  │
-│                                │
-│ [      SIMPAN DISTRIBUSI     ]  │
-├────────────────────────────────┤
-│ Riwayat Distribusi    Lihat >   │
-│ Pedagang Demo A · 120 buah      │
-│ Pedagang Demo B · 180 buah      │
-└────────────────────────────────┘
+┌──────────────────────────────────┐
+│ ← Kembali      Pesanan Pedagang  │
+├──────────────────────────────────┤
+│ Tanggal                          │
+│ [ 24 Okt 2026              ▼ ]   │
+│                                  │
+│ Nama pedagang                    │
+│ [ Pilih nama tersimpan       ▼ ] │
+│ [ + Tambah nama pedagang       ] │
+├──────────────────────────────────┤
+│ JENIS ROTI              JUMLAH   │
+│ Srikaya                 [   0  ] │
+│ Kelapa                  [   0  ] │
+│ Paha ayam               [   0  ] │
+│ Donat buat              [   0  ] │
+│ Moca                    [   0  ] │
+│ Abon                    [   0  ] │
+│ Keju                    [   0  ] │
+│ Mantul                  [   0  ] │
+│ Donat panjang           [   0  ] │
+│ Kacang hijau            [   0  ] │
+│ Pisang coklat           [   0  ] │
+│ Seres warna             [   0  ] │
+│ Cappucino               [   0  ] │
+│ Nanas                   [   0  ] │
+│ Manis                   [   0  ] │
+├──────────────────────────────────┤
+│ Total pesanan: 0 buah            │
+│                                  │
+│ [ Simpan Pesanan ]               │
+│ [ Batal ]                        │
+└──────────────────────────────────┘
 ```
 
-## 4. Riwayat
+**Aturan input:**
+- Nama pedagang dipilih dari nama yang tersimpan atau nama baru ditambahkan.
+- Nama pedagang saja; tidak ada kolom keterangan tambahan.
+- Jumlah hanya menerima angka bulat nonnegatif; gunakan papan ketik numerik.
+- Huruf, tanda minus, desimal, dan simbol tidak valid.
+- Kolom kosong diperlakukan sebagai 0 ketika disimpan.
+- Total pesanan pedagang dihitung otomatis.
+- Jenis roti sudah tetap; pengguna tidak perlu mengetik nama roti.
 
-Riwayat dibuka melalui tautan **Lihat** pada bagian terkait. Sediakan filter tanggal dan pencarian nama roti; pada riwayat distribusi, sediakan juga filter/pencarian pedagang. Setiap baris menunjukkan tanggal, jenis roti, jumlah, dan waktu pencatatan. Mengedit atau menghapus catatan perlu konfirmasi dan harus memperbarui ringkasan.
+## 4. Rincian Pesanan
 
-## 5. Arah visual yang perlu dipilih
+Saat membuka baris pedagang, tampilkan tanggal, nama pedagang, rincian 15 jenis roti dan jumlahnya, total seluruh roti, serta tindakan **Edit** dan **Hapus**.
 
-**A — Terang, profesional**
-- Latar putih keabu-abuan.
-- Teks biru tua, kartu putih, aksen warna gandum/oranye.
-- Kesan rapi dan mudah dibaca di tempat kerja.
+- Edit dapat dilakukan untuk tanggal apa pun.
+- Hapus harus meminta konfirmasi.
+- Setelah edit atau hapus, hitung ulang daftar dan total untuk tanggal yang sama.
+- Jangan mengubah tanggal tanpa tindakan pengguna yang jelas.
 
-**B — Gelap, modern**
-- Latar biru gelap/arang.
-- Kartu sedikit lebih terang, teks putih, aksen hijau mint.
-- Kesan dashboard modern; perlu diperiksa keterbacaannya di luar ruangan.
+## 5. Gaya visual
 
-Rekomendasi awal: **A — Terang, profesional**, karena formulir dan angka akan sering dibaca. Warna dan susunan masih dapat diubah setelah dibahas.
+- Terang dan profesional.
+- Latar terang/netral dan teks berkontras tinggi.
+- Tabel sederhana, mudah dibaca pada layar HP.
+- Tombol cukup besar dan label berbahasa Indonesia.
+- Tidak menggunakan animasi berat.
 
-## 6. Keputusan yang perlu disepakati sebelum coding UI
+## 6. Status dan batasan
 
-1. Arah visual: A atau B?
-2. Apakah nama roti dan pedagang diketik bebas untuk demo, atau dipilih dari daftar?
-3. Apakah beranda cukup memakai tiga ringkasan angka, atau perlu grafik sederhana?
-4. Apakah catatan produksi/distribusi harus bisa diedit setelah tersimpan?
-
-## Batasan penting
-
-Prototipe ini mencatat produksi dan jumlah yang dikirim saja. Selisih produksi dan distribusi tidak boleh dianggap sebagai stok yang tersedia karena stok awal, retur, roti rusak, dan penyesuaian belum dicatat.
+- Ini wireframe, bukan implementasi.
+- Data demo harus diberi label DEMO.
+- Data prototipe disimpan lokal pada satu HP; belum ada login atau sinkronisasi.
+- Cadangan/pemulihan data belum diputuskan.
+- Perilaku bila nama pedagang yang sama dimasukkan dua kali pada tanggal yang sama masih perlu ditentukan sebelum implementasi.
