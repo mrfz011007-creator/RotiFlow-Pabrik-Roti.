@@ -53,6 +53,7 @@ public class MainActivity extends Activity {
     private EditText traderInput;
     private EditText[] quantityInputs;
     private TextView formDateText;
+    private TextView formTotalPreview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -296,14 +297,24 @@ public class MainActivity extends Activity {
             if (existing == null) quantity.setText("");
             else if (existing.quantities[i] != 0L) quantity.setText(String.valueOf(existing.quantities[i]));
             row.addView(quantity, new LinearLayout.LayoutParams(dp(104), dp(42)));
+            quantity.addTextChangedListener(new android.text.TextWatcher() {
+                @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+                @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    updateFormTotalPreview();
+                }
+                @Override public void afterTextChanged(android.text.Editable editable) { }
+            });
             formCard.addView(row, matchWrap());
             if (i < BREAD_TYPES.length - 1) addDivider(formCard);
         }
         content.addView(formCard, matchWrap());
         addGap(content, 14);
 
-        TextView totalPreview = text("Jumlah pesanan dihitung saat disimpan.", 13, MUTED, false);
-        content.addView(totalPreview, matchWrap());
+        formTotalPreview = text("Total pesanan: " + formatNumber(existing == null ? 0L : existing.total()) + " buah", 15, GREEN, true);
+        LinearLayout previewCard = cardColumn();
+        previewCard.addView(formTotalPreview, matchWrap());
+        content.addView(previewCard, matchWrap());
+        updateFormTotalPreview();
         addGap(content, 18);
         Button save = button("Simpan Pesanan", BLUE, WHITE);
         save.setOnClickListener(v -> saveOrder(existing));
@@ -318,6 +329,36 @@ public class MainActivity extends Activity {
         content.addView(cancel, matchWrap());
         addGap(content, 20);
         setContentView(wrapPage(content));
+    }
+
+    private void updateFormTotalPreview() {
+        if (formTotalPreview == null || quantityInputs == null) return;
+        long total = 0L;
+        for (EditText input : quantityInputs) {
+            if (input == null) continue;
+            String value = input.getText().toString().trim();
+            if (value.isEmpty()) continue;
+            if (!value.matches("[0-9]+")) {
+                formTotalPreview.setText("Total pesanan: periksa angka yang dimasukkan");
+                formTotalPreview.setTextColor(RED);
+                return;
+            }
+            try {
+                long amount = Long.parseLong(value);
+                if (Long.MAX_VALUE - total < amount) {
+                    formTotalPreview.setText("Total pesanan terlalu besar");
+                    formTotalPreview.setTextColor(RED);
+                    return;
+                }
+                total += amount;
+            } catch (NumberFormatException e) {
+                formTotalPreview.setText("Jumlah terlalu besar");
+                formTotalPreview.setTextColor(RED);
+                return;
+            }
+        }
+        formTotalPreview.setText("Total pesanan: " + formatNumber(total) + " buah");
+        formTotalPreview.setTextColor(GREEN);
     }
 
     private void saveOrder(OrderDatabase.OrderRecord existing) {
