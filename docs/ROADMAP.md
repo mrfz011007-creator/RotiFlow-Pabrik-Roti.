@@ -13,6 +13,7 @@
 - [x] Menetapkan nama pedagang disimpan untuk dipilih kembali; pedagang yang dimasukkan hanya yang memesan hari itu.
 - [x] Menetapkan daftar pedagang sebagai tampilan utama dan total per jenis di bawah daftar.
 - [x] Menetapkan tanggal default hari ini, dengan pilihan tanggal lain.
+- [x] Menetapkan fitur riwayat: pengguna dapat memilih tanggal untuk melihat semua pesanan pada tanggal tersebut, termasuk tanggal tanpa pesanan yang menampilkan keadaan kosong.
 - [x] Menetapkan edit dan hapus pesanan; hapus harus dikonfirmasi.
 - [x] Menetapkan penyimpanan lokal di satu HP untuk prototipe awal.
 - [ ] Tinjau dokumen desain dan wireframe terbaru bersama pengguna.
@@ -37,6 +38,7 @@
 - [ ] Buat tampilan rincian pesanan.
 - [ ] Buat total per jenis roti di bawah daftar pedagang.
 - [ ] Buat pilihan tanggal; default hari ini.
+- [ ] Buat riwayat per tanggal, termasuk tampilan keadaan kosong saat belum ada pesanan pada tanggal terpilih.
 - [ ] Buat edit pesanan lama.
 - [ ] Buat hapus dengan dialog konfirmasi.
 - [ ] Pastikan perubahan pesanan menghitung ulang semua total terkait.
