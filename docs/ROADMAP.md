@@ -1,72 +1,60 @@
 # RotiFlow — Roadmap
 
-**Status:** Ruang lingkup prototipe awal disepakati; implementasi belum dimulai.  
-**Prinsip:** Jangan mulai coding sebelum dokumen desain dan wireframe selaras dan keputusan penting yang belum jelas sudah dikonfirmasi.
+**Status:** Implementasi fitur pesanan awal sudah ditambahkan ke aplikasi Android native. Build CI dan uji perangkat masih harus diverifikasi.
+**Prinsip:** Ruang lingkup mengikuti [DESIGN.md](DESIGN.md); fitur di luar ruang lingkup tidak ditambahkan tanpa persetujuan.
 
 ## Tahap 0 — Desain dan validasi
 
 - [x] Membuat repo terpisah untuk RotiFlow.
-- [x] Membuat dokumen desain, roadmap, dan wireframe awal.
+- [x] Membuat dokumen desain, roadmap, dan wireframe.
 - [x] Menetapkan fokus versi awal: pesanan harian B2B per pedagang.
-- [x] Menetapkan daftar 15 jenis roti.
-- [x] Menetapkan input tabel ringkas dengan angka bulat nonnegatif saja.
-- [x] Menetapkan nama pedagang disimpan untuk dipilih kembali; pedagang yang dimasukkan hanya yang memesan hari itu.
-- [x] Menetapkan daftar pedagang sebagai tampilan utama dan total per jenis di bawah daftar.
-- [x] Menetapkan tanggal default hari ini, dengan pilihan tanggal lain.
-- [x] Menetapkan fitur riwayat: pengguna dapat memilih tanggal untuk melihat semua pesanan pada tanggal tersebut, termasuk tanggal tanpa pesanan yang menampilkan keadaan kosong.
-- [x] Menetapkan edit dan hapus pesanan; hapus harus dikonfirmasi.
-- [x] Menetapkan penyimpanan lokal di satu HP untuk prototipe awal.
-- [x] Tinjau desain bersama pengguna dan setujui penundaan backup/restore ke versi berikutnya.
-- [x] Memperbolehkan beberapa pesanan terpisah dari pedagang yang sama pada tanggal yang sama; semua pesanan dihitung dalam rekap.
-- [x] Menunda fitur cadangan/pemulihan data ke versi berikutnya.
+- [x] Menetapkan daftar 15 jenis roti, input bilangan bulat nonnegatif, dan kolom kosong sebagai 0.
+- [x] Menetapkan nama pedagang tersimpan, tanggal default hari ini, riwayat tanggal lama, edit dan hapus dengan konfirmasi.
+- [x] Menyetujui penyimpanan lokal dan penundaan backup/restore.
+- [x] Memperbolehkan pesanan terpisah untuk pedagang yang sama pada tanggal yang sama.
 
 ## Tahap 1 — Fondasi Android dan build otomatis
 
-**Langkah berikutnya:** mulai proyek Android native dan workflow GitHub Actions untuk menghasilkan APK debug. Backup/restore tetap di luar ruang lingkup prototipe awal.
-
-- [ ] Buat proyek Android native.
-- [ ] Tambahkan Gradle Wrapper yang sesuai.
-- [ ] Tambahkan GitHub Actions untuk build APK debug pada push dan workflow manual.
-- [ ] Pastikan build gagal terlihat jelas di log dan APK tersedia sebagai artifact.
-- [ ] Verifikasi workflow berhasil sebelum implementasi fitur utama berlanjut.
+- [x] Membuat proyek Android native.
+- [x] Mengonfigurasi GitHub Actions untuk build APK debug pada push dan workflow manual.
+- [x] Menghasilkan APK sebagai artifact dan menyediakan unduhan langsung melalui GitHub Releases.
+- [ ] Menambahkan Gradle Wrapper ke repositori agar tersedia juga untuk build lokal tanpa harus dibuat oleh workflow.
+- [ ] Memastikan build dari implementasi fitur terbaru berhasil di GitHub Actions.
 
 ## Tahap 2 — Fitur prototipe pesanan
 
-- [ ] Buat penyimpanan lokal untuk nama pedagang dan pesanan bertanggal.
-- [ ] Buat daftar nama pedagang tersimpan dan tambah nama baru.
-- [ ] Buat form pesanan dengan 15 jenis roti tetap.
-- [ ] Batasi input kuantitas ke bilangan bulat nonnegatif; kolom kosong disimpan sebagai 0.
-- [ ] Buat daftar pesanan per tanggal, dengan nama pedagang dan total roti per catatan pesanan; pedagang yang sama dapat muncul beberapa kali.
-- [ ] Buat tampilan rincian pesanan.
-- [ ] Buat total per jenis roti di bawah daftar pedagang.
-- [ ] Buat pilihan tanggal; default hari ini.
-- [ ] Buat riwayat per tanggal, termasuk tampilan keadaan kosong saat belum ada pesanan pada tanggal terpilih.
-- [ ] Buat edit pesanan lama.
-- [ ] Buat hapus dengan dialog konfirmasi.
-- [ ] Pastikan perubahan pesanan menghitung ulang semua total terkait.
+- [x] Penyimpanan lokal SQLite untuk nama pedagang dan pesanan bertanggal.
+- [x] Memilih nama pedagang tersimpan atau mengetik nama baru.
+- [x] Form pesanan berisi 15 jenis roti tetap.
+- [x] Input angka bulat nonnegatif; kolom kosong disimpan sebagai 0; total form diperbarui otomatis.
+- [x] Daftar pesanan per tanggal, nama pedagang, dan total untuk tiap catatan pesanan.
+- [x] Rincian pesanan per pedagang.
+- [x] Total per jenis roti ditampilkan di bawah daftar pedagang.
+- [x] Pilih tanggal; default hari ini.
+- [x] Riwayat tanggal lama dan keadaan kosong saat belum ada pesanan.
+- [x] Edit pesanan lama tanpa mengubah tanggal secara diam-diam.
+- [x] Hapus pesanan dengan dialog konfirmasi.
+- [x] Total terkait dihitung ulang berdasarkan data yang tersimpan.
 
-## Tahap 3 — Uji dan verifikasi
+## Tahap 3 — Uji dan verifikasi (belum dinyatakan lulus)
 
-- [ ] Uji tambah pesanan untuk beberapa pedagang, termasuk beberapa catatan terpisah untuk pedagang yang sama pada tanggal yang sama.
-- [ ] Uji perhitungan total per pedagang dan per jenis roti.
-- [ ] Uji input huruf, angka negatif, desimal, simbol, dan kolom kosong.
+- [ ] Verifikasi build GitHub Actions setelah perubahan fitur terakhir.
+- [ ] Uji tambah pesanan untuk beberapa pedagang, termasuk beberapa catatan terpisah dari pedagang yang sama di tanggal yang sama.
+- [ ] Periksa total per pedagang dan per jenis roti secara manual.
+- [ ] Uji huruf, angka negatif, desimal, simbol, angka sangat besar, dan kolom kosong.
 - [ ] Uji perubahan tanggal, edit pesanan lama, dan penghapusan dengan konfirmasi.
-- [ ] Tutup dan buka ulang aplikasi untuk memastikan data lokal bertahan.
-- [ ] Periksa log GitHub Actions dan pasang APK pada perangkat Android untuk verifikasi pengguna.
+- [ ] Tutup dan buka ulang aplikasi untuk memastikan data lokal tetap tersedia.
+- [ ] Periksa log build dan uji APK terbaru pada perangkat Android.
+- [ ] Periksa layout pada ukuran layar Android yang berbeda.
 
 ## Tahap 4 — Demo dan evaluasi bisnis
 
-- [ ] Beri label jelas bahwa APK dan data adalah demo.
-- [ ] Tunjukkan prototipe kepada bos dan catat masukan.
-- [ ] Jangan menambahkan pencatatan produksi aktual, stok, kerusakan, retur, keuangan, login, atau sinkronisasi sebelum kebutuhan dikonfirmasi.
-- [ ] Perbarui desain dan roadmap dari hasil demo sebelum menambah ruang lingkup.
+- [ ] Validasi prototipe dengan calon pengguna dan catat masukan.
+- [ ] Pertimbangkan backup/restore sebelum aplikasi menjadi catatan operasional.
+- [ ] Jangan menambahkan pencatatan produksi, stok, kerusakan, retur, keuangan, login, atau sinkronisasi sebelum kebutuhannya dikonfirmasi.
 
 ## Di luar ruang lingkup prototipe awal
 
-- Pencatatan produksi aktual.
-- Stok fisik lintas hari, roti rusak, sisa, dan retur.
-- Keuangan, pembayaran, utang, bahan baku, resep, dan laporan akuntansi.
-- Login, sinkronisasi cloud, dan akses multi-perangkat.
-- Menyalin pesanan hari sebelumnya.
+Pencatatan produksi aktual; stok fisik lintas hari; roti rusak, sisa, dan retur; keuangan, pembayaran, utang, bahan baku, resep, laporan akuntansi; login, sinkronisasi cloud, multi-perangkat; menyalin pesanan hari sebelumnya.
 
-Lihat [DESIGN.md](DESIGN.md) untuk keputusan bisnis dan [WIREFRAME.md](WIREFRAME.md) untuk susunan layar.
+Lihat [DESIGN.md](DESIGN.md) dan [WIREFRAME.md](WIREFRAME.md) untuk spesifikasi utama.

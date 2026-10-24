@@ -146,8 +146,8 @@ Keputusan untuk prototipe awal:
 
 ## 13. Checkpoint pengerjaan
 
-**Checkpoint saat ini: keputusan ruang lingkup prototipe awal sudah dikonfirmasi. Belum mulai implementasi Android.**
+**Checkpoint terbaru:** keputusan ruang lingkup sudah dikonfirmasi dan implementasi awal pesanan harian telah ditambahkan di branch `setup/android-foundation`. Build CI dan pengujian langsung di perangkat tetap wajib dilakukan sebelum menyatakan prototipe terverifikasi.
 
 Keputusan yang sudah disepakati harus dipertahankan saat memperbarui `docs/WIREFRAME.md`, roadmap, dan implementasi berikutnya. Jika ada konflik dengan dokumen lama yang menyebut pencatatan produksi/distribusi aktual, dokumen desain ini menjadi acuan terbaru untuk ruang lingkup awal.
 
-Langkah berikutnya: lakukan pemeriksaan akhir konsistensi dokumen, lalu mulai fondasi Android dan GitHub Actions.
+Langkah berikutnya: verifikasi build dari kode terbaru, uji alur pesanan pada perangkat Android, lalu catat temuan dan perbaiki bug sebelum digunakan untuk demo nyata.

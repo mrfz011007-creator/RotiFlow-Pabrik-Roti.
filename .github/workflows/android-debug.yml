@@ -1,0 +1,69 @@
+name: Android Debug APK
+
+on:
+  push:
+    branches:
+      - main
+      - setup/android-foundation
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Verify Android SDK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          test -d "$ANDROID_HOME"
+          test -x "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" || test -x "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager"
+
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.9
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug
+
+      - name: Prepare APK with friendly filename
+        run: cp app/build/outputs/apk/debug/app-debug.apk RotiFlow-debug.apk
+
+      - name: Upload debug APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RotiFlow-debug-apk
+          path: RotiFlow-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish direct APK download in GitHub Releases
+        if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/setup/android-foundation')
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: RotiFlow APK Terbaru
+          body: |
+            APK debug terbaru RotiFlow yang dibangun otomatis dari branch main.
+            Unduh file RotiFlow-debug.apk di bagian Assets.
+          target_commitish: ${{ github.sha }}
+          files: RotiFlow-debug.apk
+          fail_on_unmatched_files: true
+          make_latest: true
