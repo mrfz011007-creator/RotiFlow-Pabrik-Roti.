@@ -7,7 +7,7 @@
 
 ## 1. Navigasi utama
 
-- **Pesanan** — daftar pesanan untuk tanggal terpilih dan total semua roti.
+- **Pesanan / Riwayat** — daftar pesanan untuk tanggal terpilih dan total semua roti; pengguna dapat memilih tanggal lama untuk membuka riwayat.
 - **Tambah pesanan** — input pesanan seorang pedagang.
 - Tidak perlu halaman produksi aktual, distribusi aktual, keuangan, atau stok untuk versi awal.
 
@@ -44,7 +44,8 @@
 
 **Perilaku:**
 - Tanggal awal adalah tanggal hari ini.
-- Pengguna dapat memilih tanggal lain untuk melihat, menambah, atau mengedit pesanan.
+- Pengguna dapat memilih tanggal lain untuk melihat riwayat, menambah pesanan, atau mengedit pesanan pada tanggal tersebut.
+- Jika tanggal yang dipilih belum memiliki pesanan, tampilkan pesan bahwa belum ada pesanan pada tanggal tersebut dan tetap izinkan pengguna menambahkan pesanan.
 - Daftar berisi catatan pesanan pada tanggal terpilih. Nama pedagang yang sama dapat muncul lebih dari sekali jika ada beberapa pesanan terpisah.
 - Setiap baris memperlihatkan nama pedagang dan jumlah total rotinya.
 - Baris/rincian dapat dibuka untuk melihat semua 15 jenis roti.
@@ -121,4 +122,4 @@ Saat membuka baris pedagang, tampilkan tanggal, nama pedagang, rincian 15 jenis 
 - Data demo harus diberi label DEMO.
 - Data prototipe disimpan lokal pada satu HP; belum ada login atau sinkronisasi.
 - Cadangan/pemulihan data belum diputuskan.
-- Perilaku bila nama pedagang yang sama dimasukkan dua kali pada tanggal yang sama masih perlu ditentukan sebelum implementasi.
+- Beberapa pesanan terpisah dari pedagang yang sama pada tanggal yang sama diperbolehkan; setiap catatan tampil sebagai baris terpisah dan memiliki rincian serta tindakan masing-masing.
