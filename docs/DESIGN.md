@@ -90,7 +90,8 @@ Arah visual yang dipilih sebelumnya adalah **terang dan profesional**:
 - Setelah pesanan diedit atau dihapus, total pedagang dan total per jenis roti untuk tanggal terkait harus diperbarui.
 - Penghapusan harus meminta konfirmasi agar tidak terjadi penghapusan tanpa sengaja.
 - Perubahan pada pesanan lama tidak boleh mengubah tanggal pesanan secara diam-diam.
-- Detail perilaku penghapusan pesanan belum diputuskan.
+- Penghapusan pesanan memerlukan konfirmasi.
+- Pedagang yang sama boleh memiliki beberapa catatan pesanan terpisah pada tanggal yang sama; rekap menjumlahkan semua catatan tersebut.
 - Mekanisme cadangan/pemulihan data belum diputuskan.
 
 ## 7. Di luar ruang lingkup versi awal
