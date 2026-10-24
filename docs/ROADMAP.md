@@ -1,42 +1,68 @@
 # RotiFlow — Roadmap
 
-## Tahap 0 — Desain
-- [x] Menentukan tujuan prototipe produksi dan distribusi.
-- [x] Mendefinisikan fitur, layar, aturan data, dan kriteria demo.
-- [x] Menyiapkan dokumen desain dan roadmap di GitHub.
-- [x] Membuat wireframe awal layar Ringkasan, Produksi, Distribusi, dan Riwayat.
-- [ ] Membahas dan menyepakati arah visual serta keputusan alur dengan pengguna.
-- [ ] Memperbarui desain berdasarkan hasil diskusi sebelum implementasi UI.
+**Status:** Desain alur bisnis dikunci untuk ditinjau; implementasi belum dimulai.  
+**Prinsip:** Jangan mulai coding sebelum dokumen desain dan wireframe selaras dan keputusan penting yang belum jelas sudah dikonfirmasi.
 
-## Tahap 1 — Kerangka proyek
-- [ ] Siapkan proyek Android native.
-- [ ] Pastikan Gradle Wrapper tersedia.
-- [ ] Buat GitHub Actions untuk build APK debug.
-- [ ] Pastikan workflow menghasilkan artefak APK yang dapat diunduh.
+## Tahap 0 — Desain dan validasi
 
-## Tahap 2 — Prototipe
-- [ ] Dashboard.
-- [ ] Catatan produksi.
-- [ ] Catatan distribusi per pedagang.
-- [ ] Riwayat dan filter tanggal sederhana.
-- [ ] Validasi input dan penyimpanan lokal.
-- [ ] Data demo terpisah jelas dari data nyata.
+- [x] Membuat repo terpisah untuk RotiFlow.
+- [x] Membuat dokumen desain, roadmap, dan wireframe awal.
+- [x] Menetapkan fokus versi awal: pesanan harian B2B per pedagang.
+- [x] Menetapkan daftar 15 jenis roti.
+- [x] Menetapkan input tabel ringkas dengan angka bulat nonnegatif saja.
+- [x] Menetapkan nama pedagang disimpan untuk dipilih kembali; pedagang yang dimasukkan hanya yang memesan hari itu.
+- [x] Menetapkan daftar pedagang sebagai tampilan utama dan total per jenis di bawah daftar.
+- [x] Menetapkan tanggal default hari ini, dengan pilihan tanggal lain.
+- [x] Menetapkan edit dan hapus pesanan; hapus harus dikonfirmasi.
+- [x] Menetapkan penyimpanan lokal di satu HP untuk prototipe awal.
+- [ ] Tinjau dokumen desain dan wireframe terbaru bersama pengguna.
+- [ ] Konfirmasi bagaimana menangani pesanan ganda untuk pedagang yang sama pada tanggal yang sama.
+- [ ] Konfirmasi cara cadangan/pemulihan data atau putuskan bahwa fitur itu di luar prototipe awal.
 
-## Tahap 3 — Verifikasi
-- [ ] Build berhasil di GitHub Actions.
-- [ ] Uji input dan perhitungan ringkasan.
-- [ ] Uji data setelah aplikasi dibuka ulang.
-- [ ] Uji input kosong/tidak valid dan navigasi.
-- [ ] Instal APK di HP pengguna.
+## Tahap 1 — Fondasi Android dan build otomatis
 
-## Tahap 4 — Demo dan validasi bisnis
-- [ ] Demo kepada pemilik pabrik.
-- [ ] Catat masukan dan prioritas masalah.
-- [ ] Tentukan kebutuhan multi-perangkat, backup, login, dan laporan.
-- [ ] Bahas ruang lingkup, biaya, kepemilikan, dukungan, dan persetujuan sebelum operasional.
+- [ ] Buat proyek Android native.
+- [ ] Tambahkan Gradle Wrapper yang sesuai.
+- [ ] Tambahkan GitHub Actions untuk build APK debug pada push dan workflow manual.
+- [ ] Pastikan build gagal terlihat jelas di log dan APK tersedia sebagai artifact.
+- [ ] Verifikasi workflow berhasil sebelum implementasi fitur utama berlanjut.
 
-## Prinsip kerja
-- Repo ini terpisah; jangan mengubah My Bread atau RotiKu.
-- Jangan menyatakan fitur selesai sebelum diuji.
-- APK demo bukan catatan operasional tunggal.
-- Perubahan desain besar mengikuti masukan pengguna/pabrik.
+## Tahap 2 — Fitur prototipe pesanan
+
+- [ ] Buat penyimpanan lokal untuk nama pedagang dan pesanan bertanggal.
+- [ ] Buat daftar nama pedagang tersimpan dan tambah nama baru.
+- [ ] Buat form pesanan dengan 15 jenis roti tetap.
+- [ ] Batasi input kuantitas ke bilangan bulat nonnegatif; kolom kosong disimpan sebagai 0.
+- [ ] Buat daftar pesanan per tanggal, dengan nama pedagang dan total roti per pedagang.
+- [ ] Buat tampilan rincian pesanan.
+- [ ] Buat total per jenis roti di bawah daftar pedagang.
+- [ ] Buat pilihan tanggal; default hari ini.
+- [ ] Buat edit pesanan lama.
+- [ ] Buat hapus dengan dialog konfirmasi.
+- [ ] Pastikan perubahan pesanan menghitung ulang semua total terkait.
+
+## Tahap 3 — Uji dan verifikasi
+
+- [ ] Uji tambah pesanan untuk beberapa pedagang.
+- [ ] Uji perhitungan total per pedagang dan per jenis roti.
+- [ ] Uji input huruf, angka negatif, desimal, simbol, dan kolom kosong.
+- [ ] Uji perubahan tanggal, edit pesanan lama, dan penghapusan dengan konfirmasi.
+- [ ] Tutup dan buka ulang aplikasi untuk memastikan data lokal bertahan.
+- [ ] Periksa log GitHub Actions dan pasang APK pada perangkat Android untuk verifikasi pengguna.
+
+## Tahap 4 — Demo dan evaluasi bisnis
+
+- [ ] Beri label jelas bahwa APK dan data adalah demo.
+- [ ] Tunjukkan prototipe kepada bos dan catat masukan.
+- [ ] Jangan menambahkan pencatatan produksi aktual, stok, kerusakan, retur, keuangan, login, atau sinkronisasi sebelum kebutuhan dikonfirmasi.
+- [ ] Perbarui desain dan roadmap dari hasil demo sebelum menambah ruang lingkup.
+
+## Di luar ruang lingkup prototipe awal
+
+- Pencatatan produksi aktual.
+- Stok fisik lintas hari, roti rusak, sisa, dan retur.
+- Keuangan, pembayaran, utang, bahan baku, resep, dan laporan akuntansi.
+- Login, sinkronisasi cloud, dan akses multi-perangkat.
+- Menyalin pesanan hari sebelumnya.
+
+Lihat [DESIGN.md](DESIGN.md) untuk keputusan bisnis dan [WIREFRAME.md](WIREFRAME.md) untuk susunan layar.
