@@ -121,8 +121,7 @@ Fitur berikut **belum disepakati** dan tidak boleh ditambahkan sebagai asumsi:
 
 Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya kepada pengguna.
 
-1. **Penyimpanan:** apakah versi demo cukup menyimpan data di satu HP secara lokal?
-2. **Identitas pedagang:** apakah nama saja cukup untuk membedakan pedagang, atau perlu kolom keterangan lain?
+1. **Identitas pedagang:** apakah nama saja cukup untuk membedakan pedagang, atau perlu kolom keterangan lain?
 
 ## 10. Tanggal pesanan
 
@@ -130,7 +129,13 @@ Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya
 - Pengguna dapat memilih tanggal lain untuk melihat, menambah, atau mengedit pesanan pada tanggal tersebut.
 - Tanggal yang dipilih harus terlihat jelas agar pengguna tidak tanpa sengaja menyimpan pesanan ke tanggal yang salah.
 
-## 11. Checkpoint pengerjaan
+## 11. Penyimpanan prototipe
+
+- Data disimpan secara lokal di satu HP.
+- Prototipe pertama tidak memerlukan login atau sinkronisasi internet.
+- Batasan ini untuk demo awal dan dapat dievaluasi ulang setelah mendapat masukan dari bos.
+
+## 12. Checkpoint pengerjaan
 
 **Checkpoint saat ini: desain dan alur bisnis sedang dikunci. Belum mulai implementasi Android.**
 
