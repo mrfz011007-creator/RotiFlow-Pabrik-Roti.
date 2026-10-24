@@ -16,7 +16,7 @@
 - [x] Menetapkan edit dan hapus pesanan; hapus harus dikonfirmasi.
 - [x] Menetapkan penyimpanan lokal di satu HP untuk prototipe awal.
 - [ ] Tinjau dokumen desain dan wireframe terbaru bersama pengguna.
-- [ ] Konfirmasi bagaimana menangani pesanan ganda untuk pedagang yang sama pada tanggal yang sama.
+- [x] Memperbolehkan beberapa pesanan terpisah dari pedagang yang sama pada tanggal yang sama; semua pesanan dihitung dalam rekap.
 - [ ] Konfirmasi cara cadangan/pemulihan data atau putuskan bahwa fitur itu di luar prototipe awal.
 
 ## Tahap 1 — Fondasi Android dan build otomatis
@@ -33,7 +33,7 @@
 - [ ] Buat daftar nama pedagang tersimpan dan tambah nama baru.
 - [ ] Buat form pesanan dengan 15 jenis roti tetap.
 - [ ] Batasi input kuantitas ke bilangan bulat nonnegatif; kolom kosong disimpan sebagai 0.
-- [ ] Buat daftar pesanan per tanggal, dengan nama pedagang dan total roti per pedagang.
+- [ ] Buat daftar pesanan per tanggal, dengan nama pedagang dan total roti per catatan pesanan; pedagang yang sama dapat muncul beberapa kali.
 - [ ] Buat tampilan rincian pesanan.
 - [ ] Buat total per jenis roti di bawah daftar pedagang.
 - [ ] Buat pilihan tanggal; default hari ini.
@@ -43,7 +43,7 @@
 
 ## Tahap 3 — Uji dan verifikasi
 
-- [ ] Uji tambah pesanan untuk beberapa pedagang.
+- [ ] Uji tambah pesanan untuk beberapa pedagang, termasuk beberapa catatan terpisah untuk pedagang yang sama pada tanggal yang sama.
 - [ ] Uji perhitungan total per pedagang dan per jenis roti.
 - [ ] Uji input huruf, angka negatif, desimal, simbol, dan kolom kosong.
 - [ ] Uji perubahan tanggal, edit pesanan lama, dan penghapusan dengan konfirmasi.
