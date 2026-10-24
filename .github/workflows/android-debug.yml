@@ -55,7 +55,7 @@ jobs:
           retention-days: 14
 
       - name: Publish direct APK download in GitHub Releases
-        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/setup/android-foundation')
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
