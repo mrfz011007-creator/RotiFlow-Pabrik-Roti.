@@ -121,7 +121,7 @@ Fitur berikut **belum disepakati** dan tidak boleh ditambahkan sebagai asumsi:
 
 Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya kepada pengguna.
 
-1. **Identitas pedagang:** apakah nama saja cukup untuk membedakan pedagang, atau perlu kolom keterangan lain?
+
 
 ## 10. Tanggal pesanan
 
@@ -135,7 +135,12 @@ Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya
 - Prototipe pertama tidak memerlukan login atau sinkronisasi internet.
 - Batasan ini untuk demo awal dan dapat dievaluasi ulang setelah mendapat masukan dari bos.
 
-## 12. Checkpoint pengerjaan
+## 12. Identitas pedagang
+
+- Simpan nama pedagang saja untuk prototipe awal.
+- Kolom keterangan tambahan, lokasi, atau ciri pedagang tidak diperlukan.
+
+## 13. Checkpoint pengerjaan
 
 **Checkpoint saat ini: desain dan alur bisnis sedang dikunci. Belum mulai implementasi Android.**
 
