@@ -45,7 +45,7 @@
 **Perilaku:**
 - Tanggal awal adalah tanggal hari ini.
 - Pengguna dapat memilih tanggal lain untuk melihat, menambah, atau mengedit pesanan.
-- Daftar berisi hanya pedagang yang memiliki pesanan pada tanggal terpilih.
+- Daftar berisi catatan pesanan pada tanggal terpilih. Nama pedagang yang sama dapat muncul lebih dari sekali jika ada beberapa pesanan terpisah.
 - Setiap baris memperlihatkan nama pedagang dan jumlah total rotinya.
 - Baris/rincian dapat dibuka untuk melihat semua 15 jenis roti.
 - Total per jenis roti ditampilkan di bawah daftar pedagang; tidak ada halaman rekap terpisah pada tahap awal.
@@ -104,6 +104,7 @@ Saat membuka baris pedagang, tampilkan tanggal, nama pedagang, rincian 15 jenis 
 - Edit dapat dilakukan untuk tanggal apa pun.
 - Hapus harus meminta konfirmasi.
 - Setelah edit atau hapus, hitung ulang daftar dan total untuk tanggal yang sama.
+- Beberapa pesanan terpisah dari pedagang yang sama pada tanggal yang sama diperbolehkan; setiap catatan memiliki rincian dan tindakan edit/hapus sendiri.
 - Jangan mengubah tanggal tanpa tindakan pengguna yang jelas.
 
 ## 5. Gaya visual
