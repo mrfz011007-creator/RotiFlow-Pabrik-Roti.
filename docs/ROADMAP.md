@@ -1,6 +1,6 @@
 # RotiFlow — Roadmap
 
-**Status:** Desain alur bisnis dikunci untuk ditinjau; implementasi belum dimulai.  
+**Status:** Ruang lingkup prototipe awal disepakati; implementasi belum dimulai.  
 **Prinsip:** Jangan mulai coding sebelum dokumen desain dan wireframe selaras dan keputusan penting yang belum jelas sudah dikonfirmasi.
 
 ## Tahap 0 — Desain dan validasi
@@ -16,11 +16,13 @@
 - [x] Menetapkan fitur riwayat: pengguna dapat memilih tanggal untuk melihat semua pesanan pada tanggal tersebut, termasuk tanggal tanpa pesanan yang menampilkan keadaan kosong.
 - [x] Menetapkan edit dan hapus pesanan; hapus harus dikonfirmasi.
 - [x] Menetapkan penyimpanan lokal di satu HP untuk prototipe awal.
-- [ ] Tinjau dokumen desain dan wireframe terbaru bersama pengguna.
+- [x] Tinjau desain bersama pengguna dan setujui penundaan backup/restore ke versi berikutnya.
 - [x] Memperbolehkan beberapa pesanan terpisah dari pedagang yang sama pada tanggal yang sama; semua pesanan dihitung dalam rekap.
-- [ ] Konfirmasi cara cadangan/pemulihan data atau putuskan bahwa fitur itu di luar prototipe awal.
+- [x] Menunda fitur cadangan/pemulihan data ke versi berikutnya.
 
 ## Tahap 1 — Fondasi Android dan build otomatis
+
+**Langkah berikutnya:** mulai proyek Android native dan workflow GitHub Actions untuk menghasilkan APK debug. Backup/restore tetap di luar ruang lingkup prototipe awal.
 
 - [ ] Buat proyek Android native.
 - [ ] Tambahkan Gradle Wrapper yang sesuai.
