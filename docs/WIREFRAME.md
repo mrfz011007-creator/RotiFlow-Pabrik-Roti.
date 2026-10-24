@@ -121,5 +121,5 @@ Saat membuka baris pedagang, tampilkan tanggal, nama pedagang, rincian 15 jenis 
 - Ini wireframe, bukan implementasi.
 - Data demo harus diberi label DEMO.
 - Data prototipe disimpan lokal pada satu HP; belum ada login atau sinkronisasi.
-- Cadangan/pemulihan data belum diputuskan.
+- Fitur cadangan/pemulihan data ditunda ke versi berikutnya dan tidak termasuk prototipe awal.
 - Beberapa pesanan terpisah dari pedagang yang sama pada tanggal yang sama diperbolehkan; setiap catatan tampil sebagai baris terpisah dan memiliki rincian serta tindakan masing-masing.
