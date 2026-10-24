@@ -43,11 +43,14 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDebug
 
+      - name: Prepare APK with friendly filename
+        run: cp app/build/outputs/apk/debug/app-debug.apk RotiFlow-debug.apk
+
       - name: Upload debug APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: RotiFlow-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: RotiFlow-debug.apk
           if-no-files-found: error
           retention-days: 14
 
@@ -61,6 +64,6 @@ jobs:
             APK debug terbaru RotiFlow yang dibangun otomatis dari branch main.
             Unduh file RotiFlow-debug.apk di bagian Assets.
           target_commitish: ${{ github.sha }}
-          files: app/build/outputs/apk/debug/app-debug.apk
+          files: RotiFlow-debug.apk
           fail_on_unmatched_files: true
           make_latest: true
