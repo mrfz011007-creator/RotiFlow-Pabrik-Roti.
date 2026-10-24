@@ -86,7 +86,9 @@ Arah visual yang dipilih sebelumnya adalah **terang dan profesional**:
 ## 6. Edit dan riwayat
 
 - Pesanan yang telah disimpan dapat diedit kapan saja, termasuk tanggal sebelumnya.
-- Mengedit pesanan harus memperbarui total pedagang dan total per jenis roti untuk tanggal terkait.
+- Pesanan yang salah juga dapat dihapus.
+- Setelah pesanan diedit atau dihapus, total pedagang dan total per jenis roti untuk tanggal terkait harus diperbarui.
+- Penghapusan harus meminta konfirmasi agar tidak terjadi penghapusan tanpa sengaja.
 - Perubahan pada pesanan lama tidak boleh mengubah tanggal pesanan secara diam-diam.
 - Detail perilaku penghapusan pesanan belum diputuskan.
 - Mekanisme cadangan/pemulihan data belum diputuskan.
@@ -119,12 +121,16 @@ Fitur berikut **belum disepakati** dan tidak boleh ditambahkan sebagai asumsi:
 
 Pertanyaan berikut belum diputuskan; jangan menetapkan jawabannya tanpa bertanya kepada pengguna.
 
-1. **Tanggal:** apakah aplikasi otomatis membuka tanggal hari ini dan mengizinkan pengguna mengganti tanggal, atau tanggal harus dipilih secara manual setiap kali?
-2. **Penghapusan:** apakah pesanan yang salah boleh dihapus, atau cukup diedit?
-3. **Penyimpanan:** apakah versi demo cukup menyimpan data di satu HP secara lokal?
-4. **Identitas pedagang:** apakah nama saja cukup untuk membedakan pedagang, atau perlu kolom keterangan lain?
+1. **Penyimpanan:** apakah versi demo cukup menyimpan data di satu HP secara lokal?
+2. **Identitas pedagang:** apakah nama saja cukup untuk membedakan pedagang, atau perlu kolom keterangan lain?
 
-## 10. Checkpoint pengerjaan
+## 10. Tanggal pesanan
+
+- Secara default, aplikasi membuka tanggal hari ini.
+- Pengguna dapat memilih tanggal lain untuk melihat, menambah, atau mengedit pesanan pada tanggal tersebut.
+- Tanggal yang dipilih harus terlihat jelas agar pengguna tidak tanpa sengaja menyimpan pesanan ke tanggal yang salah.
+
+## 11. Checkpoint pengerjaan
 
 **Checkpoint saat ini: desain dan alur bisnis sedang dikunci. Belum mulai implementasi Android.**
 
