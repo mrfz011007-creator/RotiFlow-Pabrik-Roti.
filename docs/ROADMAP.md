@@ -4,6 +4,9 @@
 - [x] Menentukan tujuan prototipe produksi dan distribusi.
 - [x] Mendefinisikan fitur, layar, aturan data, dan kriteria demo.
 - [x] Menyiapkan dokumen desain dan roadmap di GitHub.
+- [x] Membuat wireframe awal layar Ringkasan, Produksi, Distribusi, dan Riwayat.
+- [ ] Membahas dan menyepakati arah visual serta keputusan alur dengan pengguna.
+- [ ] Memperbarui desain berdasarkan hasil diskusi sebelum implementasi UI.
 
 ## Tahap 1 — Kerangka proyek
 - [ ] Siapkan proyek Android native.
